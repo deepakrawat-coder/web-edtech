@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h5 class="modal-title">Edit Blogfaq</h5>
+  <h5 class="modal-title">Edit Service Blog faq</h5>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>

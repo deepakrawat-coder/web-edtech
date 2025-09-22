@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Gallery</h3>
+  <h3 class="modal-title">Edit Service Banner</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -33,17 +33,17 @@ if (isset($_GET['id'])) {
         <div class="mb-3 col-md-12">
           <label class="form-label">Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" value="<?= $categoryPlains['heading'] ?>" name="heading" placeholder="Enter a Image Name.." >
+          <input type="text" class="form-control" value="<?= $categoryPlains['heading'] ?>" name="heading" placeholder="Enter Heading Name.." >
         </div>
         <div class="mb-3 col-md-12">
           <label class="form-label">Hightlight Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" value="<?= $categoryPlains['highlight_heading'] ?>" name="highlight_heading" placeholder="Enter a Image Name.." >
+          <input type="text" class="form-control" value="<?= $categoryPlains['highlight_heading'] ?>" name="highlight_heading" placeholder="Enter Hightlight Heading Name.." >
         </div>
         <div class="mb-3 col-md-12">
-          <label class="form-label">Sub-Heading
+          <label class="form-label">Sub Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" value="<?= $categoryPlains['sub_heading'] ?>" name="sub_heading" placeholder="Enter a Image Name.." >
+          <input type="text" class="form-control" value="<?= $categoryPlains['sub_heading'] ?>" name="sub_heading" placeholder="Enter Sub Heading Name.." >
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
           <label class="form-label">Banner Image</label>
@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
         <div class="modal-footer clearfix text-end">
           <div class="col-md-4 m-t-10 sm-m-t-10">
             <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">
-              <span>Save</span>
+              <span>Update</span>
             </button>
           </div>
         </div>

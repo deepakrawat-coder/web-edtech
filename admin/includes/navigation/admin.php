@@ -198,6 +198,7 @@
 					<li><a href="/admin/service/services/">Services</a></li>
 					<li><a href="/admin/service/KeyFeatures/">Key Features</a></li>
 					<li><a href="/admin/service/aboutService/">About Service</a></li>
+					<li><a href="/admin/service/demoUser/">Demo Users</a></li>
 				</ul>
 			</li>
 		</ul>

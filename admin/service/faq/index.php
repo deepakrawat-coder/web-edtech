@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/menu.php');
                 <div class="card dz-card" id="accordion-four">
                     <div class="card-header flex-wrap d-flex justify-content-between">
                         <div>
-                            <h4 class="card-title">faq_service</h4>
+                            <h4 class="card-title">Service Faq</h4>
                         </div>
                         <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="add('service/faq','md')" data-bs-target="#modalGrid">Add FAQ</button>
                     </div>
@@ -26,7 +26,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/menu.php');
                                     <table id="faq_service-table" class="display table" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>                                                
+                                                <th>ID</th>
                                                 <th>Questions</th>
                                                 <th>Answers</th>
                                                 <th>Status </th>
@@ -59,45 +59,63 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/menu.php');
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/footer-top.php'); ?>
 <script type="text/javascript">
     $(document).ready(function() {
-    var table = $('#faq_service-table').DataTable({
-        'processing': true,
-        'ajax': {
-            'url': '/admin/app/service/faq/server',
-            'type': 'POST'
-        },
-        'columns': [
-            { data: 'No' },         
-            { data:'Question'},
-            { data:'Answer'},
-            {
-                data: 'Status',
-                render: function(data, type, row) {
-                    var active = data == 1 ? 'Active' : 'Inactive';
-                    var checked = row.Status == 1 ? 'checked' : '';
-                    return '<label class="switch" for="status-switch-' + row.ID + '"> <input onclick="changeStatus(&#39;faq_service&#39;, &#39;' + row.ID + '&#39;)" type="checkbox" ' + checked + ' id="status-switch-' + row.ID + '"><span class="slider round"></span></label>';
-                },
-                visible: true
+        var table = $('#faq_service-table').DataTable({
+            'processing': true,
+            'ajax': {
+                'url': '/admin/app/service/faq/server',
+                'type': 'POST'
             },
-           
-            {
-                data: 'ID',
-                render: function(data, type, row) {
-                //    console.log(data);
-                    return '<div class="ms-auto"><a href="javascript:void(0);" onclick="edit(&#39;service/faq&#39;, &#39;' + row.ID + '&#39, &#39;md&#39;)" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a><a href="javascript:void(0);" onclick="destroy(&#39;faq_service&#39;, &#39;' + data + '&#39)" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a></div>';
+            'columns': [{
+                    data: 'No'
                 },
-                visible: true
-            },
-        ],
-        'searching': true,
-        'paging': true,
-        'lengthChange': true,
+                {
+                    data: 'Question'
+                },
+                {
+                    data: 'Answer'
+                },
+                {
+                    data: 'Status',
+                    render: function(data, type, row) {
+                        var active = data == 1 ? 'Active' : 'Inactive';
+                        var checked = row.Status == 1 ? 'checked' : '';
+                        return '<label class="switch" for="status-switch-' + row.ID + '"> <input onclick="changeStatus(&#39;faq_service&#39;, &#39;' + row.ID + '&#39;)" type="checkbox" ' + checked + ' id="status-switch-' + row.ID + '"><span class="slider round"></span></label>';
+                    },
+                    visible: true
+                },
+
+                {
+                    data: 'ID',
+                    render: function(data, type, row) {
+                        //    console.log(data);
+                        return `
+  <div class="ms-auto">
+    <a href="javascript:void(0);" 
+       onclick="edit('service/faq', '${row.ID}', 'md')" 
+       class="btn btn-primary btn-xs sharp me-1">
+       <i class="fas fa-pencil-alt"></i>
+    </a>
+    <a href="javascript:void(0);" 
+       onclick="destroy('service/faq', '${data}')" 
+       class="btn btn-danger btn-xs sharp">
+       <i class="fa fa-trash"></i>
+    </a>
+  </div>
+`;
+
+                    },
+                    visible: true
+                },
+            ],
+            'searching': true,
+            'paging': true,
+            'lengthChange': true,
+        });
+
+        $('input[aria-controls="faq_service-table"]').keyup(function() {
+            var searchValue = $(this).val();
+            table.search(searchValue).draw();
+        });
     });
-
-    $('input[aria-controls="faq_service-table"]').keyup(function() {
-    var searchValue = $(this).val();
-    table.search(searchValue).draw();
-});
-});
-
 </script>
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/footer-bottom.php'); ?>

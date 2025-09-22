@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h5 class="modal-title">Add Blog faq</h5>
+  <h5 class="modal-title">Add Service faq</h5>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>
@@ -13,7 +13,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
     <form class="needs-validation" role="form" id="form-add-faq" action="/admin/app/service/faq/store" method="POST" enctype="multipart/form-data">
 
       <div class="mb-3 col-md-12">
-        <label class="form-label">Select plains_category <span class="text-danger">*</span></label>
+        <label class="form-label">Select Products <span class="text-danger">*</span></label>
         <select class="form-control select2" name="products_id" required>
           <option value="" disabled selected> Select Product</option>
           <?php

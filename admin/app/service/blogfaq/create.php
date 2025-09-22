@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h5 class="modal-title">Add Blog faq</h5>
+  <h5 class="modal-title">Add Service Blog faq</h5>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>

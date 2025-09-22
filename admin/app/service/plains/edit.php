@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Plains</h3>
+  <h3 class="modal-title">Edit Service Plain</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">

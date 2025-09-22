@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // die;
 
     $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
+    $message = mysqli_real_escape_string($conn, $_POST['editor']);
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
     if (!empty($_FILES["image"]["name"])) {
         $filename = uploadImageService($conn, "image", "serviceKeyFeatures");

@@ -14,7 +14,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/menu.php');
                 <div class="card dz-card" id="accordion-four">
                     <div class="card-header flex-wrap d-flex justify-content-between">
                         <div>
-                            <h4 class="card-title">Blogfaq</h4>
+                            <h4 class="card-title">Service Blogs Faq</h4>
                         </div>
                         <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="add('service/blogfaq','md')" data-bs-target="#modalGrid">Add FAQ</button>
                     </div>

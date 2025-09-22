@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Products</h3>
+  <h3 class="modal-title">Add Service Products</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">

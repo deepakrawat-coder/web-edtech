@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Category Plains</h3>
+  <h3 class="modal-title">Add Service Category Plains</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -10,7 +10,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
     <form class="needs-validation" role="form" id="form-add-plains_category" action="/admin/app/service/plains_category/store" method="POST" enctype="multipart/form-data">
       <div class="row">
         <div class="mb-3 col-md-12">
-          <label class="form-label">Select plains_category <span class="text-danger">*</span></label>
+          <label class="form-label">Select Products <span class="text-danger">*</span></label>
           <select class="form-control select2" name="products_id" required>
             <option value="" disabled selected> Select Product</option>
             <?php

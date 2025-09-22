@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Blog (<a href="/blogs?url=<?= $blogsArr['Slug'] ?>" style="color: #222B40;"><?= $blogsArr['Name'] ?></a>)</h3>
+  <h3 class="modal-title">Edit Service Blogs (<a href="/blogs?url=<?= $blogsArr['Slug'] ?>" style="color: #222B40;"><?= $blogsArr['Name'] ?></a>)</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>
@@ -34,21 +34,21 @@ if (isset($_GET['id'])) {
         <div class="mb-3 col-md-6">
           <label class="form-label">Name
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" value="<?= $blogsArr['Name'] ?>" name="name" placeholder="Enter a Blog Name.." required>
+          <input type="text" class="form-control" value="<?= $blogsArr['Name'] ?>" name="name" placeholder="Enter a Blog Name max 40 charachters.." required>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-12">
           <label class="form-label">Slug
             <span class="text-danger">*</span></label>
           <input type="text" class="form-control" value="<?= $blogsArr['Slug'] ?>" name="slug" placeholder="Enter a slug.." required>
         </div>
-        <div class="mb-3 col-md-6 syllabus_file">
+        <!-- <div class="mb-3 col-md-6 syllabus_file">
           <label class="form-label">Photo <span class="text-danger">*</span></label>
           <input type="hidden" name="updated_file" value="<?= $blogsArr['Photo'] ?>">
           <input type="file" name="photo" id="photo" class="form-control" onchange="fileValidation('photo')" accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
           <?php if (!empty($id) && !empty($blogsArr['Photo'])) { ?>
             <img src="<?php echo !empty($id) ? $blogsArr['Photo'] : ''; ?>" height="50" />
           <?php } ?>
-        </div>
+        </div> -->
         <div class="mb-3 col-md-12">
           <label class="form-label">Short Description<span class="text-danger">*</span></label>
           <textarea cols="2" class="form-control" name="description" placeholder="Enter a Short Description.." required><?= $blogsArr['Description'] ?></textarea>
@@ -72,10 +72,26 @@ if (isset($_GET['id'])) {
           <textarea cols="2" class="form-control" name="meta_description" placeholder="Enter a Meta Description.."><?= $blogsArr['Meta_Description'] ?></textarea>
         </div>
       </div>
+      <div class="mb-3 col-md-12 d-flex flex-column">
+          <label class="form-label">Banner Image</label>
+          <input type="hidden" name="updated_file" value="<?=$blogsArr['Photo']?>">
+          <label class="custom-image-upload w-100" for="image">
+            <span class="placeholder">Click or Drag & Drop to upload image size (1176 × 827 )</span>
+            <img id="previewImage" alt="Preview">
+            <input type="file" name="photo" id="image"
+              accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
+              onchange="previewFile(this)">
+          </label>
+
+          <?php if (!empty($blogsArr['Photo'])): ?>
+            <img src="<?= $blogsArr['Photo'] ?>" alt="Banner">
+          <?php endif; ?>
+
+        </div>
       <div class=" modal-footer clearfix text-end">
         <div class="col-md-4 m-t-10 sm-m-t-10">
           <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">
-            <span>Save</span>
+            <span>Update</span>
           </button>
         </div>
       </div>

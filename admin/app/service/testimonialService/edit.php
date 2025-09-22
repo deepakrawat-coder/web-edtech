@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Testimonails</h3>
+  <h3 class="modal-title">Edit Service Testimonails</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -35,17 +35,33 @@ if (isset($_GET['id'])) {
             <span class="text-danger">*</span></label>
           <input type="text" class="form-control" value="<?= $testimonails['name'] ?>" name="name" placeholder="Enter a Image Name.." required>
         </div>
-        <div class="mb-3 col-6">
+        <div class="mb-3 col-12">
           <label class="form-label">Tile <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="title" value="<?= $testimonails['title'] ?>" placeholder="Enter a Image Name.." required>
         </div>
-        <div class="mb-3 col-md-12 syllabus_file">
+        <!-- <div class="mb-3 col-md-12 syllabus_file">
           <label class="form-label">Photo </label>
           <input type="hidden" name="image" value="<?= $testimonails['image'] ?>">
           <input type="file" name="updatedlogo" id="photo" class="form-control" onchange="fileValidation('photo')" accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
           <?php if (!empty($id) && !empty($testimonails['image'])) { ?>
             <img src="<?php echo !empty($id) ? $testimonails['image'] : ''; ?>" height="50" />
           <?php } ?>
+        </div> -->
+        <div class="mb-3 col-md-12 d-flex flex-column">
+          <label class="form-label">Image</label>
+          <input type="hidden" name="image" value="<?=$testimonails['image']?>">
+          <label class="custom-image-upload w-100" for="image">
+            <span class="placeholder">Click or Drag & Drop to upload image size (576x400)</span>
+            <img id="previewImage" alt="Preview">
+            <input type="file" name="updatedlogo" id="image"
+              accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
+              onchange="previewFile(this)">
+          </label>
+
+          <?php if (!empty($testimonails['image'])): ?>
+            <img src="<?= $testimonails['image'] ?>" alt="Banner">
+          <?php endif; ?>
+
         </div>
         <div class="mb-3 col-md-12">
           <label class="form-label">Message <span class="text-danger">*</span></label>
@@ -58,7 +74,7 @@ if (isset($_GET['id'])) {
         <div class="modal-footer clearfix text-end">
           <div class="col-md-4 m-t-10 sm-m-t-10">
             <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">
-              <span>Save</span>
+              <span>Update</span>
             </button>
           </div>
         </div>

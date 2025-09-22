@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Category Plains</h3>
+  <h3 class="modal-title">Add Service </h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -24,17 +24,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
         <div class="mb-3 col-md-12">
           <label class="form-label">Title
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="title" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="title" placeholder="Enter a Title Name approx 22 character.." required>
         </div>
         <div class="mb-3 col-md-12">
           <label class="form-label">Message
             <span class="text-danger">*</span></label>
-          <textarea type="text" class="form-control" name="message" placeholder="Enter a plains_category Name.." required></textarea>
+          <textarea type="text" class="form-control" name="message" placeholder="Enter a Message approx 180 character.." required></textarea>
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
-          <label class="form-label">Banner Image</label>
+          <label class="form-label">Service Icon Image</label>
           <label class="custom-image-upload w-100" for="image">
-            <span class="placeholder">Click or Drag & Drop to upload image size (101x100)</span>
+            <span class="placeholder">Click or Drag & Drop to upload image size (100x100)</span>
             <img id="previewImage" alt="Preview">
             <input type="file" name="image" id="image"
               accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"

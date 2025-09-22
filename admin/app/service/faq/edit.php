@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h5 class="modal-title">Edit Blogfaq</h5>
+  <h5 class="modal-title">Edit Service Faq</h5>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>
@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
   <div class="form-validation">
     <form class="needs-validation" role="form" id="form-add-faq" action="/admin/app/service/faq/update" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="id" value="<?= $getdata['id'] ?>">
-      <div class="mb-3 col-6">
+      <div class="mb-3 col-12">
         <label class="form-label">Select Products <span class="text-danger">*</span></label>
         <select class="form-control " name="products_id" >
           <?php
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
       <div class=" modal-footer clearfix text-end">
         <div class="col-md-4 m-t-10 sm-m-t-10">
           <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">
-            <span>Save</span>
+            <span>Update</span>
           </button>
         </div>
       </div>

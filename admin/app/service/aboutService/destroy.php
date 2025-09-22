@@ -5,9 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE' && isset($_GET['id'])) {
 
     $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    $check = $conn->query("SELECT ID FROM key_features WHERE ID = $id");
+    $check = $conn->query("SELECT ID FROM service_about WHERE ID = $id");
     if ($check->num_rows > 0) {
-        $delete = $conn->query("DELETE FROM key_features WHERE ID = $id");
+        $delete = $conn->query("DELETE FROM service_about WHERE ID = $id");
         if ($delete) {
             echo json_encode(['status' => 200, 'message' => 'Products Deleted Successfully!']);
         } else {

@@ -4,7 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Testimonials</h3>
+  <h3 class="modal-title">Add Service Plain</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -30,7 +30,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
           </select>
         </div>
         <div class="mb-3 col-md-6">
-          <label class="form-label">Actiual Price<span class="text-danger">*</span></label>
+          <label class="form-label">Actual Price<span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="actual_price" placeholder="Enter a Plain Actual Price.." required>
         </div>
         <div class="mb-3 col-md-6">

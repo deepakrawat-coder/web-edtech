@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Category Plains</h3>
+  <h3 class="modal-title">Add Service About Us</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -22,17 +22,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
           </select>
         </div>
         <div class="mb-3 col-md-12">
-          <label class="form-label">Title
+          <label class="form-label">About Title
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="title" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="title" placeholder="Enter About Title.." required>
         </div>
         <div class="mb-3 col-md-12">
-          <label class="form-label">Message
+          <label class="form-label">About Content
             <span class="text-danger">*</span></label>
-          <textarea type="text" class="form-control" name="message" placeholder="Enter a plains_category Name.." required></textarea>
+          <textarea type="text" class="form-control ckeditor" id="editor" name="editor" placeholder="Enter About Content Only 870 character" required></textarea>
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
-          <label class="form-label">Features Image</label>
+          <label class="form-label"> Image</label>
           <label class="custom-image-upload w-100" for="image">
             <span class="placeholder">Click or Drag & Drop to upload image size (576x400)</span>
             <img id="previewImage" alt="Preview">
@@ -117,4 +117,12 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
       }
     }
   }
+</script>
+<script>
+  // Initialize CKEditor for all textareas with the class 'ckeditor'
+  $(document).ready(function() {
+    $('.ckeditor').each(function() {
+      CKEDITOR.replace(this);
+    });
+  });
 </script>

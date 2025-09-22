@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Gallery</h3>
+  <h3 class="modal-title">Edit Service</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
         <div class="mb-3 col-md-12">
           <label class="form-label">Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" value="<?= $categoryPlains['title'] ?>" name="title" placeholder="Enter a Image Name.." >
+          <input type="text" class="form-control" value="<?= $categoryPlains['title'] ?>" name="title" placeholder="Enter a Title Name approx 22 character.." >
         </div>
         <!-- <div class="mb-3 col-md-12">
           <label class="form-label">Sub-Heading
@@ -43,13 +43,13 @@ if (isset($_GET['id'])) {
          <div class="mb-3 col-md-12">
           <label class="form-label">Message
             <span class="text-danger">*</span></label>
-          <textarea type="text" class="form-control" name="message" placeholder="Enter a plains_category Name.." required><?= $categoryPlains['message'] ?></textarea>
+          <textarea type="text" class="form-control" name="message" placeholder="Enter a Message approx 180 character.." required><?= $categoryPlains['message'] ?></textarea>
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
-          <label class="form-label">Banner Image</label>
+          <label class="form-label">Service Icon Image</label>
           <input type="hidden" name="image" value="<?=$categoryPlains['image']?>">
           <label class="custom-image-upload w-100" for="image">
-            <span class="placeholder">Click or Drag & Drop to upload image size (101x100)</span>
+            <span class="placeholder">Click or Drag & Drop to upload image size (100x100)</span>
             <img id="previewImage" alt="Preview">
             <input type="file" name="updatedservice" id="image"
               accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"

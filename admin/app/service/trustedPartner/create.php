@@ -4,7 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Trusted Client Logo</h3>
+  <h3 class="modal-title">Add Service Trusted Client </h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -39,17 +39,26 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
         </div>
         <!-- Image Name -->
         <div class="mb-3 col-md-12">
-          <label class="form-label">Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="name" placeholder="Enter a Image Name.." required>
+          <label class="form-label"> Trusted Client Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="name" placeholder="Enter a Trusted Client Name.." required>
         </div>
-
+ <div class="mb-3 col-md-12 d-flex flex-column">
+          <label class="form-label">Trusted Client Image</label>
+          <label class="custom-image-upload w-100" for="image">
+            <span class="placeholder">Click or Drag & Drop to upload image size (210x75)</span>
+            <img id="previewImage" alt="Preview">
+            <input type="file" name="image" id="image"
+              accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
+              onchange="previewFile(this)">
+          </label>
+        </div>
         <!-- File Upload -->
-        <div class="mb-3 col-md-12 syllabus_file">
+        <!-- <div class="mb-3 col-md-12 syllabus_file">
           <label class="form-label">Photo</label>
           <input type="file" name="images" id="photo" class="form-control"
             onchange="fileValidation('photo')"
             accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
-        </div>
+        </div> -->
 
         <!-- Submit -->
         <div class="modal-footer clearfix text-end">

@@ -15,9 +15,9 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/menu.php');
                 <div class="card dz-card" id="accordion-four">
                     <div class="card-header flex-wrap d-flex justify-content-between">
                         <div>
-                            <h4 class="card-title">Trusted Partner</h4>
+                            <h4 class="card-title">Service Banner</h4>
                         </div>
-                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="add('/service/service-banner','md')" data-bs-target="#modalGrid">Add Parnter</button>
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" onclick="add('/service/service-banner','md')" data-bs-target="#modalGrid">Add Banner</button>
                     </div>
                     <!-- /tab-content -->
                     <div class="tab-content" id="myTabContent-3">

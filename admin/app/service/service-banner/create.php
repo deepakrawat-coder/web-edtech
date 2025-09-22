@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Category Plains</h3>
+  <h3 class="modal-title">Add Service Banner</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -24,17 +24,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
         <div class="mb-3 col-md-12">
           <label class="form-label">Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="heading" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="heading" placeholder="Enter Heading Name.." required>
         </div>
          <div class="mb-3 col-md-12">
           <label class="form-label">Hightlight Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="highlight_heading" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="highlight_heading" placeholder="Enter  Hightlight Heading Name.." required>
         </div>
         <div class="mb-3 col-md-12">
-          <label class="form-label">Sub-Heading
+          <label class="form-label">Sub Heading
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="sub_heading" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="sub_heading" placeholder="Enter a Sub Heading Name.." required>
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
           <label class="form-label">Banner Image</label>

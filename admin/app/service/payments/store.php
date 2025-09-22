@@ -23,23 +23,57 @@ if (!$data) {
     echo json_encode(['status' => 0, 'message' => 'No data received']);
     exit;
 }
+if ($data['plan_name'] === 'Free Trial') {
+    // print_r($data);die;
+    $name    = $conn->real_escape_string($data['name'] ?? '');
+    $email   = $conn->real_escape_string($data['email'] ?? '');
+    $company_name   = $conn->real_escape_string($data['company_name'] ?? '');
+    $number  = $conn->real_escape_string($data['number'] ?? '');
+    $address = $conn->real_escape_string($data['message'] ?? '');
+
+    if (!$name || !$email || !$number) {
+        echo json_encode(['status' => 0, 'message' => 'All fields are required for Free Trial']);
+        exit;
+    }
+
+    $sql = $conn->query("
+        INSERT INTO demo_user (name, email, phone_no, address,company_name) 
+        VALUES ('$name', '$email', '$number', '$address','$company_name')
+    ");
+
+    if ($sql) {
+        $id = $conn->insert_id;
+        $freeDemo = 'freeDemo';
+
+        // include mail logic
+        include($_SERVER['DOCUMENT_ROOT'] . '/admin/app/service/payments/freeDemoMail.php');
+
+        // ✅ Return JSON instead of redirect
+        echo json_encode(['status' => 1, 'message' => 'Free trial request submitted successfully!']);
+        exit;
+    } else {
+        echo json_encode(['status' => 0, 'message' => 'Error inserting free trial user: ' . $conn->error]);
+        exit;
+    }
+}
 
 $plan_id    = $conn->real_escape_string($data['plan_id'] ?? '');
 $plan_name  = $conn->real_escape_string($data['plan_name'] ?? '');
+$company_name  = $conn->real_escape_string($data['company_name'] ?? '');
 $plan_price = $conn->real_escape_string(intval($data['plan_price']) ?? 0);
 $name       = $conn->real_escape_string($data['name'] ?? '');
 $email      = $conn->real_escape_string($data['email'] ?? '');
-$number     = $conn->real_escape_string($data['number'] ?? '');
+$phone_no     = $conn->real_escape_string($data['number'] ?? '');
 $address    = $conn->real_escape_string($data['message'] ?? '');
 
-if (!$plan_id || !$plan_name || !$plan_price || !$name || !$email || !$number || !$address) {
+if (!$plan_id || !$plan_name || !$plan_price || !$name || !$email || !$phone_no || !$address) {
     echo json_encode(['status' => 0, 'message' => 'All fields are required']);
     exit;
 }
 
 // Insert order
-$sql = "INSERT INTO orders (plan_id, plan_name, plan_price, name, email, number, address) 
-        VALUES ('$plan_id','$plan_name','$plan_price','$name','$email','$number','$address')";
+$sql = "INSERT INTO orders (plan_id, plan_name, plan_price, name, email, phone_no, address, company_name) 
+        VALUES ('$plan_id','$plan_name','$plan_price','$name','$email','$phone_no','$address','$company_name')";
 
 if ($conn->query($sql) === TRUE) {
     $order_id = $conn->insert_id;
@@ -61,7 +95,7 @@ if ($conn->query($sql) === TRUE) {
         "productinfo" => $plan_name,
         "firstname" => $name,
         "email" => $email,
-        "phone" => $number,
+        "phone" => $phone_no,
         "surl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
         "furl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
         "hash" => $hash,

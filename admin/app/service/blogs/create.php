@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Blogs</h3>
+  <h3 class="modal-title">Add Service Blogs</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal">
   </button>
 </div>
@@ -25,17 +25,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
         <div class="mb-3 col-md-6">
           <label class="form-label">Name
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="name" placeholder="Enter a Blog Name.." required>
+          <input type="text" class="form-control" name="name" placeholder="Enter a Blog Name max 40 charachters.." required>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-12">
           <label class="form-label">Slug
             <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="slug" placeholder="Enter a slug.." required>
         </div>
-        <div class="mb-3 col-md-6 syllabus_file">
+        <!-- <div class="mb-3 col-md-6 syllabus_file">
           <label class="form-label">Photo </label>
           <input type="file" name="photo" id="photo" class="form-control"  onchange="fileValidation('photo')" accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
-        </div>
+        </div> -->
         <div class="mb-3 col-md-12">
           <label class="form-label">Short Description<span class="text-danger">*</span></label>
           <textarea cols="2" class="form-control" name="description" placeholder="Enter a Short Description.." required></textarea>
@@ -60,6 +60,20 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
           <textarea cols="2" class="form-control" name="meta_description" placeholder="Enter a Meta Description.."></textarea>
         </div>
       </div>
+       <!-- <div class="mb-3 col-md-6 syllabus_file">
+          <label class="form-label">Photo </label>
+          <input type="file" name="photo" id="photo" class="form-control"  onchange="fileValidation('photo')" accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
+        </div> -->
+        <div class="mb-3 col-md-12 d-flex flex-column">
+          <label class="form-label">Features Image</label>
+          <label class="custom-image-upload w-100" for="image">
+            <span class="placeholder">Click or Drag & Drop to upload image size (1176 × 827 )</span>
+            <img id="previewImage" alt="Preview">
+            <input type="file" name="photo" id="image"
+              accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
+              onchange="previewFile(this)">
+          </label>
+        </div>
       <div class=" modal-footer clearfix text-end">
         <div class="col-md-4 m-t-10 sm-m-t-10">
           <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">

@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_id = mysqli_real_escape_string($conn, $_POST['products_id']);
 
     // ✅ Handle file upload (field name: "logo")
-    if (!empty($_FILES["images"]["name"])) {
-        $filename = uploadImageService($conn, "images", "clients_logos");
+    if (!empty($_FILES["image"]["name"])) {
+        $filename = uploadImageService($conn, "image", "clients_logos");
     } else {
         // Use default image if nothing uploaded
         $filename = "/admin/admin-assets/images/default-program.jpg";

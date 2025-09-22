@@ -4,7 +4,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Testimonials</h3>
+  <h3 class="modal-title">Add Service Testimonials</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -43,15 +43,26 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php');
           <label class="form-label">Name <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="name" placeholder="Enter a Image Name.." required>
         </div>
-        <div class="mb-3 col-md-6">
+        <div class="mb-3 col-md-12">
           <label class="form-label">Tile <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="title" placeholder="Enter a Image Name.." required>
         </div>
-        <div class="mb-3 col-md-6 syllabus_file">
+        <!-- <div class="mb-3 col-md-6 syllabus_file">
           <label class="form-label">Photo</label>
           <input type="file" name="image" id="photo" class="form-control"
             accept="image/png, image/jpg, image/jpeg, image/svg,image/avif">
+        </div> -->
+        <div class="mb-3 col-md-12 d-flex flex-column">
+          <label class="form-label">Image</label>
+          <label class="custom-image-upload w-100" for="image">
+            <span class="placeholder">Click or Drag & Drop to upload image size (576x400)</span>
+            <img id="previewImage" alt="Preview">
+            <input type="file" name="image" id="image"
+              accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
+              onchange="previewFile(this)">
+          </label>
         </div>
+
         <div class="mb-3 col-md-12">
           <label class="form-label">Message <span class="text-danger">*</span></label>
           <!-- <input type="text" class="form-control" name="title" placeholder="Enter a Image Name.." required> -->

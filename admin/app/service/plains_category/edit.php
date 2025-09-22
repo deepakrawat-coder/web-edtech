@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Edit Gallery</h3>
+  <h3 class="modal-title">Edit Service Category Plains</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
       <input type="hidden" name="id" value="<?= $categoryPlains['id'] ?>">
       <div class="row">
         <div class="mb-3 col-md-12">
-          <label class="form-label">Select plains_category <span class="text-danger">*</span></label>
+          <label class="form-label">Select Products <span class="text-danger">*</span></label>
           <select class="form-control select2" name="products_id" required>
             <option value="" disabled selected> Select Product</option>
             <?php
@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
         <div class="modal-footer clearfix text-end">
           <div class="col-md-4 m-t-10 sm-m-t-10">
             <button aria-label="" type="submit" class="btn btn-primary btn-cons btn-animated from-left">
-              <span>Save</span>
+              <span>Update</span>
             </button>
           </div>
         </div>

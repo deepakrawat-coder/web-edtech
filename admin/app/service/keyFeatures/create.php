@@ -2,7 +2,7 @@
 include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
 
 <div class="modal-header">
-  <h3 class="modal-title">Add Category Plains</h3>
+  <h3 class="modal-title">Add Service Key Features</h3>
   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="card-body">
@@ -24,17 +24,17 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
         <div class="mb-3 col-md-12">
           <label class="form-label">Title
             <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="title" placeholder="Enter a plains_category Name.." required>
+          <input type="text" class="form-control" name="title" placeholder="Enter a Key Feature Name max 65 charracter.." required>
         </div>
         <div class="mb-3 col-md-12">
           <label class="form-label">Message
             <span class="text-danger">*</span></label>
-          <textarea type="text" class="form-control" name="message" placeholder="Enter a plains_category Name.." required></textarea>
+          <textarea type="text" class="form-control ckeditor" name="editor" id="editor" placeholder="Enter a Meassage Name max 330 charracter.." required></textarea>
         </div>
         <div class="mb-3 col-md-12 d-flex flex-column">
           <label class="form-label">Features Image</label>
           <label class="custom-image-upload w-100" for="image">
-            <span class="placeholder">Click or Drag & Drop to upload image size (546x410)</span>
+            <span class="placeholder">Click or Drag & Drop to upload image size (400x300)</span>
             <img id="previewImage" alt="Preview">
             <input type="file" name="image" id="image"
               accept="image/png, image/jpg, image/jpeg, image/svg, image/avif"
@@ -117,4 +117,12 @@ include($_SERVER['DOCUMENT_ROOT'] . '/admin/includes/helper.php'); ?>
       }
     }
   }
+</script>
+<script>
+  // Initialize CKEditor for all textareas with the class 'ckeditor'
+  $(document).ready(function() {
+    $('.ckeditor').each(function() {
+      CKEDITOR.replace(this);
+    });
+  });
 </script>

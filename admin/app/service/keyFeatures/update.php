@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = intval($_POST['id']);
     $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
+    $message = mysqli_real_escape_string($conn, $_POST['editor']);
     $product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
     $existingFileName = $_POST['image'];
     if (!empty($_FILES["updatedKeyFeatures"]["name"])) {
