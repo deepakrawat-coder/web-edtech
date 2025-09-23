@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $txnid = $_POST['txnid'] ?? '';
     $status = $_POST['status'] ?? '';
     if (!$txnid) {
-        echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/fail'; },2000);</script>";
+        echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/fail'; },2000);</script>";
         exit;
     }
     $order_status = ($status === 'success') ? 'paid' : 'failed';
@@ -293,30 +293,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // REDIRECT BASED ON EMAIL STATUS
                 // ----------------------
                 if ($firstMail && $secondMail) {
-                    echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/success'; },2000);</script>";
+                    echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/success'; },2000);</script>";
                 } else {
                     error_log("Email sending failed: First - $firstMail, Second - $secondMail");
                     // Still redirect to success as payment was successful
-                    echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/success'; },2000);</script>";
+                    echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/success'; },2000);</script>";
                 }
             } catch (Exception $e) {
                 error_log('Mailer Error: ' . $mail->ErrorInfo);
                 // Still redirect to success as payment was successful
-                echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/success'; },2000);</script>";
+                echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/success'; },2000);</script>";
             }
 
             exit;
         }
         // If no email, still redirect to success
-        echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/success'; },2000);</script>";
+        echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/success'; },2000);</script>";
         exit;
     }
 
     // If payment failed
-    echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/fail'; },2000);</script>";
+    echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/fail'; },2000);</script>";
     exit;
 } else {
     // Invalid request
-    echo "<script>setTimeout(()=>{ window.location.href='http://localhost:5173/fail'; },2000);</script>";
+    echo "<script>setTimeout(()=>{ window.location.href='https://leads.edtechinnovate.com/fail'; },2000);</script>";
     exit;
 }

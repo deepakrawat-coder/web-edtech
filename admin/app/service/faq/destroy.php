@@ -11,9 +11,9 @@ echo('asdasd');die;
   //   exit();
   // }
 
-  $check = $conn->query("SELECT ID FROM faq_service WHERE ID = $id");
+  $check = $conn->query("SELECT id FROM faq_service WHERE id = $id");
   if ($check->num_rows > 0) {
-    $delete = $conn->query("DELETE FROM faq_service WHERE ID = $id");
+    $delete = $conn->query("DELETE FROM faq_service WHERE id = $id");
     if ($delete) {
       echo json_encode(['status' => 200, 'message' => 'Blogfaq deleted successfully!']);
     } else {

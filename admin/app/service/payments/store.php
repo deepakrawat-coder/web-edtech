@@ -4,7 +4,8 @@ header("Access-Control-Allow-Origin: http://localhost:5173");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Credentials: true");
-
+//  "surl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
+//         "furl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
 // Handle preflight request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -96,8 +97,8 @@ if ($conn->query($sql) === TRUE) {
         "firstname" => $name,
         "email" => $email,
         "phone" => $phone_no,
-        "surl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
-        "furl" => "http://edtech-web.local/admin/app/service/payments/payment-response",
+        "surl" => "https://www.edtechinnovate.com/admin/app/service/payments/payment-response",
+        "furl" => "https://www.edtechinnovate.com/admin/app/service/payments/payment-response",
         "hash" => $hash,
         "split_payments" => $split_accounts,
     );

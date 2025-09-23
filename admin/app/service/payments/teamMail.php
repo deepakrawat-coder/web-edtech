@@ -2,7 +2,7 @@
 $mail->clearAddresses();
 $mail->clearAttachments();
 // send to your team
-$mail->addAddress("deepakrawat17082000@gmail.com", "EdTech Support Team");
+$mail->addAddress("crmservices@edtechinnovate.com", "EdTech Support Team");
 
 $mail->Subject = "{$typeOfClients}- {$clientData['name']}";
 
